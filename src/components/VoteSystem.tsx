@@ -37,11 +37,11 @@ export const VoteSystem: FunctionComponent<{ currentLocale?: string }> = ({
 	}, []);
 
 	const removeMinHeigh = () => {
-		if(containerRef.current) containerRef.current.style.minHeight = '';
+		if (containerRef.current) containerRef.current.style.minHeight = '';
 	}
 
 	const addMinheight = () => {
-		if(containerRef.current) containerRef.current.style.minHeight = `${containerRef.current.offsetHeight}px`;
+		if (containerRef.current) containerRef.current.style.minHeight = `${containerRef.current.offsetHeight}px`;
 	}
 
 	const nextCategoryHandler = () => {
@@ -113,11 +113,10 @@ export const VoteSystem: FunctionComponent<{ currentLocale?: string }> = ({
                   w-full flex flex-col gap-2 justify-center items-center
                   transition-all p-1 rounded
                   md:hover:scale-105
-                  ${
-						isVoted
-							? 'bg-yellow-500 text-white'
-							: 'bg-[#1682c7] hover:bg-sky-400 text-white'
-					}
+                  ${isVoted
+										? 'bg-yellow-500 text-white'
+										: 'bg-[#1682c7] hover:bg-sky-400 text-white'
+									}
                   `}
 								onClick={() =>
 									setVotesCategory({ candidate: id })
@@ -197,11 +196,10 @@ const CategoryTitle = ({
 	return (
 		<h1 class='relative [font-weight:100] m-auto mb-10 tracking-[1px] font-tomaso text-xl sm:text-3xl max-w-full sm:max-w-xl text-center leading-snug flex justify-center items-center h-80 text-white'>
 			<svg
-				class={`h-60 w-24 fill-current ${
-					isChanging
+				class={`h-60 w-24 fill-current ${isChanging
 						? 'translate-x-[6.5rem] sm:translate-x-[8.5rem]'
 						: 'translate-x-9 sm:translate-x-0'
-				} transition duration-500`}
+					} transition duration-500`}
 				viewBox='0 0 90.35 240.43'
 			>
 				<path
@@ -212,11 +210,10 @@ const CategoryTitle = ({
 
 			<div class='flex justify-center items-center flex-col gap-y-4 w-72 px-10'>
 				<svg
-					class={`absolute ${
-						isChanging
+					class={`absolute ${isChanging
 							? 'scale-[1.2] sm:scale-[1.7] -translate-y-0'
 							: 'scale-100 -translate-y-28'
-					} h-14 fill-current transition duration-500`}
+						} h-14 fill-current transition duration-500`}
 					viewBox='0 0 16.04 62.55'
 				>
 					<path
@@ -225,22 +222,20 @@ const CategoryTitle = ({
 					/>
 				</svg>
 				<span
-					class={`${
-						isChanging
+					class={`${isChanging
 							? 'invisible opacity-0'
 							: 'visible opacity-100'
-					} delay-75 transition duration-300`}
+						} delay-75 transition duration-300`}
 				>
 					{children}
 				</span>
 			</div>
 
 			<svg
-				class={`h-60 w-24 fill-current ${
-					isChanging
+				class={`h-60 w-24 fill-current ${isChanging
 						? '-translate-x-[6.5rem] sm:-translate-x-[8.5rem]'
 						: '-translate-x-9 sm:translate-x-0'
-				} transition duration-500`}
+					} transition duration-500`}
 				viewBox='0 0 90.35 240.43'
 			>
 				<path
